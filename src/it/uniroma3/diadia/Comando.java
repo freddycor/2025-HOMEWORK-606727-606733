@@ -1,3 +1,4 @@
+package it.uniroma3.diadia;
 
 
 
@@ -30,6 +31,8 @@ public class Comando {
 		// seconda parola: eventuale parametro
 		if (scannerDiParole.hasNext())
 			this.parametro = scannerDiParole.next();
+		
+		scannerDiParole.close();
     }
 
     public String getNome() {
