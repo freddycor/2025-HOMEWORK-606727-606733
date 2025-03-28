@@ -75,11 +75,17 @@ public class DiaDia {
 			this.posa(comandoDaEseguire.getParametro());
 		else
 			ioConsole.mostraMessaggio("Comando sconosciuto");
-		if (this.partita.vinta()) {
-			ioConsole.mostraMessaggio("Hai vinto!");
+		
+		if(this.partita.isFinita()) {
+			if(this.partita.vinta()) {
+				ioConsole.mostraMessaggio("Hai vinto!");
+			} else {
+				ioConsole.mostraMessaggio("Hai perso!");
+			}
 			return true;
-		} else
-			return false;
+		}
+		
+		return false;
 	}   
 
 	// implementazioni dei comandi dell'utente:
@@ -107,10 +113,9 @@ public class DiaDia {
 		else {
 			this.partita.setStanzaCorrente(prossimaStanza);
 			int cfu = this.partita.getGiocatore().getCfu();
-			this.partita.getGiocatore().setCfu(cfu--);
+			this.partita.getGiocatore().setCfu(--cfu);
 		}
-		ioConsole.mostraMessaggio(partita.getStanzaCorrente().getDescrizione());
-		ioConsole.mostraMessaggio(partita.getGiocatore().getBorsa().toString());
+		ioConsole.mostraMessaggio(partita.toString());
 	}
 
 	/**

@@ -142,7 +142,7 @@ public class Stanza {
 		boolean trovato;
 		trovato = false;
 		for (Attrezzo attrezzo : this.attrezzi) {
-			if (attrezzo !=null && attrezzo.getNome().equals(nomeAttrezzo))
+			if (attrezzo != null && attrezzo.getNome().equals(nomeAttrezzo))
 				trovato = true;
 		}
 		return trovato;
@@ -174,10 +174,13 @@ public class Stanza {
         int indiceAttrezzo = -1;
         
         for (int i=0; i<this.numeroAttrezzi; i++) {
-        	if(this.attrezzi[i] == attrezzo) indiceAttrezzo = i;
+        	if(this.attrezzi[i] == attrezzo) {
+        		indiceAttrezzo = i;
+        		break;
+        	}
         }
         
-        if(indiceAttrezzo==-1) return false;
+        if(indiceAttrezzo == -1) return false;
         
         this.attrezzi[indiceAttrezzo] = null;
         this.numeroAttrezzi--;
