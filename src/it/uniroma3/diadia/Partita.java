@@ -39,7 +39,9 @@ public class Partita {
 	}
 	
 	/**
-	 * Restituisce vero se e solo se la partita e' stata vinta
+	 * Restituisce vero se e solo 
+	 * se la partita e' stata vinta
+	 * 
 	 * @return vero se partita vinta
 	 */
 	public boolean vinta() {
@@ -47,7 +49,9 @@ public class Partita {
 	}
 
 	/**
-	 * Restituisce vero se e solo se la partita e' finita
+	 * Restituisce vero se e solo 
+	 * se la partita e' finita
+	 * 
 	 * @return vero se partita finita
 	 */
 	public boolean isFinita() {
@@ -56,20 +60,35 @@ public class Partita {
 
 	/**
 	 * Imposta la partita come finita
-	 *
 	 */
 	public void setFinita() {
 		this.finita = true;
 	}
 	
+	/**
+	 * Restituisce il giocatore della partita
+	 * @return giocatore
+	 */
 	public Giocatore getGiocatore() {
 		return this.giocatore;
 	}
 	
+	/**
+	 * Restituisce il labirinto in 
+	 * cui viene giocata la partita
+	 * 
+	 * @return labirinto del gioco
+	 */
 	public Labirinto getLabirinto() {
 		return this.labirinto;
 	}
 	
+	/**
+	 * Restituisce la descrizione
+	 * completa dello stato della partita
+	 * 
+	 * @return lo stato partita
+	 */
 	public String toString() {
 		return "+---------------------------+\n"
 				+ this.getStanzaCorrente().toString() 

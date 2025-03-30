@@ -52,7 +52,6 @@ public class Labirinto {
     
     /**
      * Restituisce la stanza vincente
-     * 
      * @return Stanza Vincente
      */
     public Stanza getStanzaVincente() {
@@ -61,7 +60,6 @@ public class Labirinto {
     
     /**
      * Restituisce la stanza iniziale
-     * 
      * @return Stanza Iniziale
      */
     public Stanza getStanzaIniziale() {

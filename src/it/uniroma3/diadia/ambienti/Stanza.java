@@ -127,10 +127,8 @@ public class Stanza {
     		if (direzione!=null)
     			risultato.append(" " + direzione);
     	risultato.append("\nAttrezzi nella stanza: ");
-    	for (Attrezzo attrezzo : this.attrezzi) {
-    		if (attrezzo!=null)
-    			risultato.append(attrezzo.toString()+" ");
-    	}
+    	for (int i=0; i<numeroAttrezzi; i++)
+    		risultato.append(attrezzi[i].toString()+" ");
     	return risultato.toString();
     }
 
@@ -141,8 +139,8 @@ public class Stanza {
 	public boolean hasAttrezzo(String nomeAttrezzo) {
 		boolean trovato;
 		trovato = false;
-		for (Attrezzo attrezzo : this.attrezzi) {
-			if (attrezzo != null && attrezzo.getNome().equals(nomeAttrezzo))
+		for (int i=0; i<numeroAttrezzi; i++) {
+			if (attrezzi[i].getNome().equals(nomeAttrezzo))
 				trovato = true;
 		}
 		return trovato;
@@ -157,9 +155,9 @@ public class Stanza {
 	public Attrezzo getAttrezzo(String nomeAttrezzo) {
 		Attrezzo attrezzoCercato;
 		attrezzoCercato = null;
-		for (Attrezzo attrezzo : this.attrezzi) {
-			if (attrezzo != null && attrezzo.getNome().equals(nomeAttrezzo))
-				attrezzoCercato = attrezzo;
+		for (int i=0; i<numeroAttrezzi; i++) {
+			if (attrezzi[i].getNome().equals(nomeAttrezzo))
+				attrezzoCercato = attrezzi[i];
 		}
 		return attrezzoCercato;	
 	}
@@ -192,7 +190,10 @@ public class Stanza {
 		return true;
 	}
 
-
+	/**
+     * Restituisce la collezione delle direzioni disponibili dalla stanza.
+     * @return la collezione di direzioni che si possono prendere dalla stanza.
+     */
 	public String[] getDirezioni() {
 		String[] direzioni = new String[this.numeroStanzeAdiacenti];
 	    for(int i=0; i<this.numeroStanzeAdiacenti; i++)

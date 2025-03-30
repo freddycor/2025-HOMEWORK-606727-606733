@@ -8,19 +8,36 @@ public class Giocatore {
 	
 	private Borsa borsa;
 	
+	/**
+	 * Crea un giocatore
+	 */
 	public Giocatore() {
 		this.cfu = CFU_INIZIALI;
 		this.borsa = new Borsa();
 	}
 	
+	/**
+	 * Restituisce i CFU attuali del giocatore
+	 * @return CFU attuali
+	 */
 	public int getCfu() {
 		return this.cfu;
 	}
 
+	/**
+	 * Imposta i CFU del giocatore
+	 * @param cfu da impostare
+	 */
 	public void setCfu(int cfu) {
 		this.cfu = cfu;		
 	}
 	
+	/**
+	 * Restituisce la borsa in cui 
+	 * il giocatore può mettere oggetti
+	 * 
+	 * @return borsa del giocatore
+	 */
 	public Borsa getBorsa() {
 		return this.borsa;
 	}
