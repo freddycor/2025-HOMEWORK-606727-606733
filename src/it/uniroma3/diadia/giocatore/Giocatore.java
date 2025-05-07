@@ -41,4 +41,12 @@ public class Giocatore {
 	public Borsa getBorsa() {
 		return this.borsa;
 	}
+	
+	/**
+	 * Restituisce se il giocatore è vivo
+	 * @return true se vivo
+	 */
+	public boolean isVivo() {
+		return this.cfu > 0;
+	}
 }

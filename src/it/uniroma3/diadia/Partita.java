@@ -55,7 +55,7 @@ public class Partita {
 	 * @return vero se partita finita
 	 */
 	public boolean isFinita() {
-		return finita || vinta() || (giocatore.getCfu() == 0);
+		return finita || vinta() || !giocatore.isVivo();
 	}
 
 	/**
@@ -89,14 +89,9 @@ public class Partita {
 	 * 
 	 * @return lo stato partita
 	 */
+	@Override
 	public String toString() {
-		return "+---------------------------+\n"
-				+ this.getStanzaCorrente().toString() 
-				+ "\n\nCfu = " 
-				+ this.getGiocatore().getCfu()
-				+ "\n"
-				+ this.getGiocatore().getBorsa().toString()
-				+ "\n"
-				+ "+---------------------------+\n";
+		return "Partita [labirinto=" + labirinto + ", stanzaCorrente=" + stanzaCorrente + ", finita=" + finita
+				+ ", giocatore=" + giocatore + "]";
 	}
 }
