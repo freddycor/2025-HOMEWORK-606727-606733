@@ -1,10 +1,12 @@
 package it.uniroma3.diadia.comandi;
 
+import it.uniroma3.diadia.IO;
 import it.uniroma3.diadia.Partita;
 
 public abstract class AbstractComando implements Comando {
 	
-	String parametro;
+	private String parametro;
+	private IO io;
 	
 	@Override
 	public abstract void esegui(Partita partita);
@@ -16,5 +18,15 @@ public abstract class AbstractComando implements Comando {
 	
 	public String getParametro() {
 		return this.parametro;
+	}
+	
+	@Override
+	public IO getIO() {
+		return this.io;
+	}
+	
+	@Override
+	public void setIO(IO io) {
+		this.io = io;
 	}
 }

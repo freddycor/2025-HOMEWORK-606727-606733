@@ -128,12 +128,12 @@ public class LabirintoBuilder {
 	}
 	
 	public Labirinto getDefaultLabirinto() {
-		return this.addStanza("Atrio")
+		return this.addStanzaIniziale("Atrio")
 		.addStanza("Aula N11")
 		.addStanzaBuia("Aula N12", "lanterna")
 		.addStanza("Aula N10")
 		.addStanza("Laboratorio Campus")
-		.addStanza("Biblioteca")
+		.addStanzaVincente("Biblioteca")
 		.addAdiacenza("Atrio", "Biblioteca", "nord")
 		.addAdiacenza("Atrio", "Aula N11", "est")
 		.addAdiacenza("Atrio", "Aula N10", "sud")

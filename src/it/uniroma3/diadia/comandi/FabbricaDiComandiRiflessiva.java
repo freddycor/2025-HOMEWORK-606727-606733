@@ -29,7 +29,9 @@ public class FabbricaDiComandiRiflessiva implements FabbricaDiComandi {
 			comando = (Comando) Class.forName(nomeClasse).newInstance();
 			comando.setParametro(parametro);
 		} catch (Exception e) {
-			comando = new ComandoNonValido(io);
+			comando = new ComandoNonValido();
+		} finally {
+			comando.setIO(io);
 		}
 		return comando;
 	}

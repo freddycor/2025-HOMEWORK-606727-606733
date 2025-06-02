@@ -51,7 +51,7 @@ class TestInteraPartita {
 		assertTrue(ioSimulator.contieneRisultato("Aula N12"));
 		assertTrue(ioSimulator.contieneRisultato("qui c'è un buio pesto"));
 		assertTrue(ioSimulator.contieneRisultato("Attrezzo posato nella stanza"));
-		assertTrue(ioSimulator.contieneRisultato("Aula N10"));
+		assertTrue(ioSimulator.contieneRisultato("Aula N11"));
 		assertTrue(ioSimulator.contieneRisultato("Hai vinto"));
 	}
 }

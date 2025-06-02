@@ -21,7 +21,9 @@ class TestComandoPrendi {
 	
 	@BeforeEach
 	public void setUp() throws Exception {
-		comando = new ComandoPrendi(new IOConsole());
+		comando = new ComandoPrendi();
+		comando.setIO(new IOConsole());
+		
 		partita = new Partita(new LabirintoBuilder().addStanzaIniziale("atrio").getLabirinto());
 		attrezzo = new Attrezzo("Martello", 1);
 		

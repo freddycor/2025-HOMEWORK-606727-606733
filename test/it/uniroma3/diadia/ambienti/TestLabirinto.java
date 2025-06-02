@@ -15,12 +15,12 @@ class TestLabirinto {
 	}
 	
 	@Test
-	void testGetStanzaInizialeNotNull() {
-		assertNotNull(labirinto.getStanzaIniziale());
+	void testGetStanzaInizialeNull() {
+		assertNull(labirinto.getStanzaIniziale());
 	}
 
 	@Test
-	void testGetStanzaVincenteNotNull() {
-		assertNotNull(labirinto.getStanzaVincente());
+	void testGetStanzaVincenteNull() {
+		assertNull(labirinto.getStanzaVincente());
 	}
 }

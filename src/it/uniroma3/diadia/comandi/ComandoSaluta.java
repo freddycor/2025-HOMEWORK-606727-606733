@@ -1,6 +1,5 @@
 package it.uniroma3.diadia.comandi;
 
-import it.uniroma3.diadia.IO;
 import it.uniroma3.diadia.Partita;
 import it.uniroma3.diadia.personaggi.AbstractPersonaggio;
 
@@ -9,7 +8,6 @@ public class ComandoSaluta extends AbstractComando {
 	private static final String MESSAGGIO_CHI = "Chi dovrei salutare?...";
 
 	private String messaggio;
-	private IO io;
 
 	@Override
 	public void esegui(Partita partita) {
@@ -17,9 +15,9 @@ public class ComandoSaluta extends AbstractComando {
 		personaggio = partita.getStanzaCorrente().getPersonaggio();
 		if (personaggio != null) {
 			this.messaggio = personaggio.saluta();
-			io.mostraMessaggio(this.messaggio);
+			this.getIO().mostraMessaggio(this.messaggio);
 		} else
-			io.mostraMessaggio(MESSAGGIO_CHI);
+			this.getIO().mostraMessaggio(MESSAGGIO_CHI);
 	}
 
 	public String getMessaggio() {

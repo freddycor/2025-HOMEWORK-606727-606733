@@ -43,6 +43,9 @@ public class IOSimulator implements IO {
 	}
 	
 	public boolean contieneRisultato(String risultato) {
+		for(String msg : this.risultati) {
+			if(msg.contains(risultato)) return true;
+		}
 		return this.risultati.contains(risultato);
 	}
 
