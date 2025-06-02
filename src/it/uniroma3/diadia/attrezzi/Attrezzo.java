@@ -31,6 +31,14 @@ public class Attrezzo {
 	public String getNome() {
 		return this.nome;
 	}
+	
+	/**
+	 * Imposta il peso dell'oggetto
+	 * @param peso
+	 */
+	public void setPeso(int peso) {
+		this.peso = peso;
+	}
 
 	/**
 	 * Restituisce il peso dell'attrezzo
@@ -39,13 +47,24 @@ public class Attrezzo {
 	public int getPeso() {
 		return this.peso;
 	}
+	
+	@Override
+	public boolean equals(Object o) {
+		Attrezzo that = (Attrezzo)o;
+		return this.getNome().equals(that.getNome());
+	}
+	
+	@Override
+	public int hashCode() {
+		return this.getNome().hashCode();
+	}
 
 	/**
 	 * Restituisce una rappresentazione stringa di questo attrezzo
 	 * @return la rappresentazione stringa
 	 */
 	public String toString() {
-		return this.getNome()+" ("+this.getPeso()+"kg)";
+		return this.getNome()+":"+this.getPeso();
 	}
 
 }
