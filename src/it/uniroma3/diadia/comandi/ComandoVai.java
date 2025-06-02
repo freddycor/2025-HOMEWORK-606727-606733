@@ -4,7 +4,7 @@ import it.uniroma3.diadia.IO;
 import it.uniroma3.diadia.Partita;
 import it.uniroma3.diadia.ambienti.Stanza;
 
-public class ComandoVai implements Comando {
+public class ComandoVai extends AbstractComando {
 	
 	private String direzione;
 	
@@ -19,6 +19,8 @@ public class ComandoVai implements Comando {
 	 */
 	@Override
 	public void esegui(Partita partita) {
+		this.direzione = this.getParametro();
+		
 		Stanza stanzaCorrente = partita.getStanzaCorrente();
 		Stanza prossimaStanza = null;
 		
@@ -36,11 +38,6 @@ public class ComandoVai implements Comando {
 		partita.setStanzaCorrente(prossimaStanza);
 		io.mostraMessaggio(partita.getStanzaCorrente().getNome());
 		partita.getGiocatore().setCfu(partita.getGiocatore().getCfu()-1);
-	}
-
-	@Override
-	public void setParametro(String parametro) {
-		this.direzione = parametro;
 	}
 	
 }
