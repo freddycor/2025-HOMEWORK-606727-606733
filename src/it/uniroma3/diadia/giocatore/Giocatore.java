@@ -1,5 +1,7 @@
 package it.uniroma3.diadia.giocatore;
 
+import it.uniroma3.diadia.DiaDiaProperties;
+
 public class Giocatore {
 
 	static final private int CFU_INIZIALI = 20;
@@ -14,6 +16,14 @@ public class Giocatore {
 	public Giocatore() {
 		this.cfu = CFU_INIZIALI;
 		this.borsa = new Borsa();
+	}
+	
+	/**
+	 * Crea un giocatore con proprietà
+	 */
+	public Giocatore(DiaDiaProperties properties) {
+		this.cfu = Integer.parseInt(properties.getProperty("cfu_iniziali"));
+		this.borsa = new Borsa(Integer.parseInt(properties.getProperty("peso_max_borsa")));
 	}
 	
 	/**

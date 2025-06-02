@@ -1,5 +1,7 @@
 package it.uniroma3.diadia;
 
+import java.util.Properties;
+
 import it.uniroma3.diadia.ambienti.Labirinto;
 import it.uniroma3.diadia.ambienti.LabirintoBuilder;
 import it.uniroma3.diadia.comandi.Comando;
@@ -22,6 +24,7 @@ import it.uniroma3.diadia.comandi.FabbricaDiComandiRiflessiva;
 public class DiaDia  {
 	
 	private IO io;
+	private DiaDiaProperties properties;
 
 	static final private String MESSAGGIO_BENVENUTO = ""+
 			"Ti trovi nell'Universita', ma oggi e' diversa dal solito...\n" +
@@ -38,6 +41,7 @@ public class DiaDia  {
 	public DiaDia(Labirinto labirinto, IO io) {
 		this.partita = new Partita(labirinto);
 		this.io = io;
+		this.properties = new DiaDiaProperties();
 	}
 
 	public void gioca() {

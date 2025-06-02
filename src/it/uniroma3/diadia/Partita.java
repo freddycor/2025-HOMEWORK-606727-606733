@@ -22,12 +22,19 @@ public class Partita {
 	
 	private Giocatore giocatore;
 	
+	private DiaDiaProperties properties;
 	
-	public Partita(Labirinto labirinto) {
+	public Partita(Labirinto labirinto, DiaDiaProperties properties) {
 		this.finita = false;
 		this.labirinto = labirinto;
 		this.stanzaCorrente = labirinto.getStanzaIniziale();
-		this.giocatore = new Giocatore();
+		this.giocatore = new Giocatore(properties);
+		this.properties = properties;
+	}
+	
+	
+	public Partita(Labirinto labirinto) {
+		this(labirinto, new DiaDiaProperties());
 	}
 
 	public void setStanzaCorrente(Stanza stanzaCorrente) {
