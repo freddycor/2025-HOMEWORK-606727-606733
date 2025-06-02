@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import it.uniroma3.diadia.IOConsole;
 import it.uniroma3.diadia.Partita;
 import it.uniroma3.diadia.ambienti.Labirinto;
+import it.uniroma3.diadia.ambienti.LabirintoBuilder;
 
 class TestComandoVai {
 	
@@ -17,7 +18,7 @@ class TestComandoVai {
 	@BeforeEach
 	public void setUp() throws Exception {
 		comando = new ComandoVai(new IOConsole());
-		partita = new Partita();
+		partita = new Partita(new LabirintoBuilder().addStanzaIniziale("atrio").addStanza("N11").addAdiacenza("atrio", "N11", "est").getLabirinto());
 	}
 
 	@Test

@@ -23,9 +23,9 @@ public class Partita {
 	private Giocatore giocatore;
 	
 	
-	public Partita() {
+	public Partita(Labirinto labirinto) {
 		this.finita = false;
-		this.labirinto = new Labirinto();
+		this.labirinto = labirinto;
 		this.stanzaCorrente = labirinto.getStanzaIniziale();
 		this.giocatore = new Giocatore();
 	}
@@ -84,6 +84,15 @@ public class Partita {
 	}
 	
 	/**
+	 * Imposta il labirinto della partita
+	 * 
+	 * @param Labirinto da impostare
+	 */
+	public void setLabirinto(Labirinto labirinto) {
+		this.labirinto = labirinto;
+	}
+	
+	/**
 	 * Restituisce la descrizione
 	 * completa dello stato della partita
 	 * 
@@ -94,4 +103,6 @@ public class Partita {
 		return "Partita [labirinto=" + labirinto + ", stanzaCorrente=" + stanzaCorrente + ", finita=" + finita
 				+ ", giocatore=" + giocatore + "]";
 	}
+	
+	
 }
