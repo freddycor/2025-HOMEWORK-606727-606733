@@ -5,6 +5,8 @@ import it.uniroma3.diadia.attrezzi.Attrezzo;
 
 public class Mago extends AbstractPersonaggio {
 	
+	private static final String PRESENTAZIONE = "Ciao sono {nome}, un mago. Regalo attrezzi a chi interagisce con me e li aiuto con gli attrezzi!";
+	
 	private static final String MESSAGGIO_DONO = "Sei un vero simpaticone, "
 			+ "con una mia magica azione, troverai un nuovo oggetto " + "per il tuo borsone!";
 	
@@ -14,8 +16,8 @@ public class Mago extends AbstractPersonaggio {
 	
 	private Attrezzo attrezzo;
 
-	public Mago(String nome, String presentazione, Attrezzo attrezzo) {
-		super(nome, presentazione);
+	public Mago(String nome, Attrezzo attrezzo) {
+		super(nome, PRESENTAZIONE.replace("{nome}", nome));
 		this.attrezzo = attrezzo;
 	}
 

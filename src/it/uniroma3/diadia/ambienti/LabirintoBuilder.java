@@ -4,6 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 import it.uniroma3.diadia.attrezzi.Attrezzo;
+import it.uniroma3.diadia.personaggi.Cane;
+import it.uniroma3.diadia.personaggi.Mago;
+import it.uniroma3.diadia.personaggi.Strega;
 
 public class LabirintoBuilder {
 	
@@ -91,6 +94,22 @@ public class LabirintoBuilder {
 		this.stanze.get(nomeStanzaPartenza).impostaStanzaAdiacente(direzione, this.stanze.get(nomeStanzaArrivo));
 		return this;
 	}
+	
+	public LabirintoBuilder addStrega(String nome, String nomeStanza) {
+		this.stanze.get(nomeStanza).setPersonaggio(new Strega(nome));
+		return this;
+	}
+	
+	public LabirintoBuilder addMago(String nome, Attrezzo attrezzo, String nomeStanza) {
+		this.stanze.get(nomeStanza).setPersonaggio(new Mago(nome,attrezzo));
+		return this;
+	}
+	
+	public LabirintoBuilder addCane(String nome, String ciboPreferito, String nomeStanza) {
+		this.stanze.get(nomeStanza).setPersonaggio(new Cane(nome,ciboPreferito));
+		return this;
+	}
+	
 	
 	public Stanza getStanza(String nomeStanza) {
 		return this.stanze.get(nomeStanza);

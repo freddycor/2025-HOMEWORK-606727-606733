@@ -5,6 +5,8 @@ import it.uniroma3.diadia.attrezzi.Attrezzo;
 
 public class Cane extends AbstractPersonaggio {
 	
+	private static final String PRESENTAZIONE = "Ciao sono {nome}, un cane. Mordo sempre, ma se mi regali il mio cibo preferito ti regalo qualcosa";
+	
 	private static final String MESSAGGIO = "Sei stato morso da un cane, perdi 1 CFU";
 	
 	private static final String MESSAGGIO_CIBO_GIUSTO = "Ho lasciato un attrezzo nella stanza";
@@ -15,8 +17,8 @@ public class Cane extends AbstractPersonaggio {
 	Attrezzo attrezzoRegalo;
 
 
-	public Cane(String nome, String presentazione, String ciboPreferito) {
-		super(nome, presentazione);
+	public Cane(String nome, String ciboPreferito) {
+		super(nome, PRESENTAZIONE.replace("{nome}", nome));
 		this.ciboPreferito = ciboPreferito;
 	}
 

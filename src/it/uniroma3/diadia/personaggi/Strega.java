@@ -11,12 +11,13 @@ import it.uniroma3.diadia.attrezzi.Attrezzo;
 
 public class Strega extends AbstractPersonaggio {
 	
+	private static final String PRESENTAZIONE = "Ciao sono {nome}, una strega. Vedo che mi hai salutato, quindi la prossima volta che interagirai con me ti aiuterò!";
 	private static final String MESSAGGIO_SENZA_SALUTO = "Non mi hai salutato, ti trasferisco nella stanza adiacente peggiore";
 	private static final String MESSAGGIO_CON_SALUTO = "Mi hai salutato! Ti trasferisco nella stanza adiacente migliore";
 	private static final String MESSAGGIO_CON_RISATE = "HO ricevuto il tuo regalo, HA HA HA HA";
 
-	public Strega(String nome, String presentazione) {
-		super(nome, presentazione);
+	public Strega(String nome) {
+		super(nome, PRESENTAZIONE.replace("{nome}", nome));
 	}
 
 	@Override
