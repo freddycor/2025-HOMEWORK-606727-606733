@@ -22,7 +22,7 @@ class TestComandoPrendi {
 	@BeforeEach
 	public void setUp() throws Exception {
 		comando = new ComandoPrendi();
-		comando.setIO(new IOConsole());
+		comando.setIO(new IOConsole(null));
 		
 		partita = new Partita(Labirinto.newBuilder().addStanzaIniziale("atrio").getLabirinto());
 		attrezzo = new Attrezzo("Martello", 1);

@@ -17,7 +17,7 @@ class TestComandoVai {
 	@BeforeEach
 	public void setUp() throws Exception {
 		comando = new ComandoVai();
-		comando.setIO(new IOConsole());
+		comando.setIO(new IOConsole(null));
 		
 		partita = new Partita(Labirinto.newBuilder().addStanzaIniziale("atrio").addStanza("N11").addAdiacenza("atrio", "N11", "est").getLabirinto());
 	}
