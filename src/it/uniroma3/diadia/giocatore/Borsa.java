@@ -128,4 +128,64 @@ public class Borsa {
             s.append("Borsa vuota");
         return s.toString();
     }
+    
+    public List<Attrezzo> getContenutoOrdinatoPerPeso() {
+    	List<Attrezzo> ordinata = new ArrayList<>(this.attrezzi.values());
+    	
+    	ordinata.sort(new Comparator<Attrezzo>() {
+
+			@Override
+			public int compare(Attrezzo o1, Attrezzo o2) {
+				int cmp = o1.getPeso() - o2.getPeso();
+				if(cmp == 0) return o1.getNome().compareTo(o2.getNome());
+				return cmp;
+			}
+		});
+    	
+    	return ordinata;
+    }
+    
+    public SortedSet<Attrezzo> getContenutoOrdinatoPerNome() {
+    	SortedSet<Attrezzo> ordinati = new TreeSet<Attrezzo>(new Comparator<Attrezzo>() {
+
+			@Override
+			public int compare(Attrezzo o1, Attrezzo o2) {
+				return o1.getNome().compareTo(o2.getNome());
+			}
+    		
+    	});
+    	ordinati.addAll(this.attrezzi.values());
+    	
+    	return ordinati;
+    }
+    
+    SortedSet<Attrezzo> getSortedSetOrdinatoPerPeso() {
+    	SortedSet<Attrezzo> ordinati = new TreeSet<Attrezzo>(new Comparator<Attrezzo>() {
+
+			@Override
+			public int compare(Attrezzo o1, Attrezzo o2) {
+				int cmp = o1.getPeso() - o2.getPeso();
+				if(cmp == 0) return o1.getNome().compareTo(o2.getNome());
+				return cmp;
+			}
+    		
+    	}); 
+    	ordinati.addAll(this.attrezzi.values());
+    	return ordinati;
+    }
+    
+    Map<Integer,Set<Attrezzo>> getContenutoRaggruppatoPerPeso() {
+    	Map<Integer,Set<Attrezzo>> raggruppati = new HashMap<>();
+    	
+    	for(Attrezzo a : this.attrezzi.values()) {
+    		Set<Attrezzo> set = raggruppati.get(a.getPeso());
+    		if(set == null) {
+    			set = new HashSet<Attrezzo>();
+    			raggruppati.put(a.getPeso(), set);
+    		}
+    		set.add(a);
+    	}
+    	
+    	return raggruppati;
+    }
 }

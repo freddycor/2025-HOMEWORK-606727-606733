@@ -87,5 +87,37 @@ class TestBorsa {
 		
 		assertNull(borsa.getAttrezzo("Martello"));
 	}
+	
+	@Test
+	public void testStessoPesoOrdinatiSortedSet() {
+		borsa.addAttrezzo(new Attrezzo("Trapano", 1));
+		borsa.addAttrezzo(martello);
+		
+		assertEquals("[Martello:1, Trapano:1]", borsa.getContenutoOrdinatoPerNome().toString());
+	}
+	
+	@Test
+	public void testStessoPesoOrdinatiLista() {
+		borsa.addAttrezzo(new Attrezzo("Trapano", 1));
+		borsa.addAttrezzo(martello);
+		
+		assertEquals("[Martello:1, Trapano:1]", borsa.getContenutoOrdinatoPerPeso().toString());
+	}
+	
+	@Test
+	public void testOrdinatiPerNomeSortedSet() {
+		borsa.addAttrezzo(new Attrezzo("Trapano", 1));
+		borsa.addAttrezzo(martello);
+		
+		assertEquals("[Martello:1, Trapano:1]", borsa.getContenutoOrdinatoPerNome().toString());
+	}
+	
+	@Test
+	public void testStessoPesoOrdinatiMappa() {
+		borsa.addAttrezzo(new Attrezzo("Trapano", 1));
+		borsa.addAttrezzo(martello);
+		
+		assertEquals("{1=[Martello:1, Trapano:1]}", borsa.getContenutoRaggruppatoPerPeso().toString());
+	}
 
 }
