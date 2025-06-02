@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import it.uniroma3.diadia.IOConsole;
 import it.uniroma3.diadia.Partita;
-import it.uniroma3.diadia.ambienti.LabirintoBuilder;
+import it.uniroma3.diadia.ambienti.Labirinto;
 import it.uniroma3.diadia.attrezzi.Attrezzo;
 
 class TestComandoPosa {
@@ -24,7 +24,7 @@ class TestComandoPosa {
 		comando = new ComandoPosa();
 		comando.setIO(new IOConsole());
 				
-		partita = new Partita(new LabirintoBuilder().addStanzaIniziale("atrio").getLabirinto());
+		partita = new Partita(Labirinto.newBuilder().addStanzaIniziale("atrio").getLabirinto());
 		attrezzo = new Attrezzo("Martello",1);
 		partita.getGiocatore().getBorsa().addAttrezzo(attrezzo);
 	}

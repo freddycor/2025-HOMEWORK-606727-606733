@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import it.uniroma3.diadia.ambienti.LabirintoBuilder;
+import it.uniroma3.diadia.ambienti.Labirinto;
 
 public class TestPartita {
 	
@@ -13,7 +13,7 @@ public class TestPartita {
 	
 	@BeforeEach
 	public void setUp() throws Exception {
-		this.partita = new Partita(new LabirintoBuilder().getDefaultLabirinto());
+		this.partita = new Partita(Labirinto.newBuilder().getDefaultLabirinto());
 	}
 	
 	@Test

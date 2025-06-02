@@ -3,7 +3,8 @@ package it.uniroma3.diadia;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
-import it.uniroma3.diadia.ambienti.LabirintoBuilder;
+
+import it.uniroma3.diadia.ambienti.Labirinto;
 
 class TestInteraPartita {
 	
@@ -13,7 +14,7 @@ class TestInteraPartita {
 	@Test
 	void testVinta() {
 		ioSimulator = new IOSimulator("vai nord");
-		diaDia = new DiaDia(new LabirintoBuilder().getDefaultLabirinto(), ioSimulator);
+		diaDia = new DiaDia(Labirinto.newBuilder().getDefaultLabirinto(), ioSimulator);
 		diaDia.gioca();
 		
 		assertTrue(ioSimulator.contieneRisultato("Hai vinto!"));
@@ -23,7 +24,7 @@ class TestInteraPartita {
 	void testAttrezziNellaPrimaStanza() {
 		
 		ioSimulator = new IOSimulator("prendi osso\nfine");
-		diaDia = new DiaDia(new LabirintoBuilder().getDefaultLabirinto(), ioSimulator);
+		diaDia = new DiaDia(Labirinto.newBuilder().getDefaultLabirinto(), ioSimulator);
 		diaDia.gioca();
 		
 		assertTrue(ioSimulator.contieneRisultato("Attrezzo inserito nella borsa"));
@@ -32,7 +33,7 @@ class TestInteraPartita {
 	@Test
 	void testVaiEst() {
 		ioSimulator = new IOSimulator("vai est\nfine");
-		diaDia = new DiaDia(new LabirintoBuilder().getDefaultLabirinto(), ioSimulator);
+		diaDia = new DiaDia(Labirinto.newBuilder().getDefaultLabirinto(), ioSimulator);
 		diaDia.gioca();
 		
 		assertTrue(ioSimulator.contieneRisultato("Aula N11"));
@@ -41,7 +42,7 @@ class TestInteraPartita {
 	@Test
 	void testInteraPartita() {
 		ioSimulator = new IOSimulator("vai sud\nprendi lanterna\nvai nord\nvai est\nvai sud\nguarda\nposa lanterna\nvai nord\nvai ovest\nvai nord");
-		diaDia = new DiaDia(new LabirintoBuilder().getDefaultLabirinto(), ioSimulator);
+		diaDia = new DiaDia(Labirinto.newBuilder().getDefaultLabirinto(), ioSimulator);
 		diaDia.gioca();
 		
 		assertTrue(ioSimulator.contieneRisultato("Aula N10"));

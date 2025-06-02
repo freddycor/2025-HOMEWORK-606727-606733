@@ -77,11 +77,9 @@ public class DiaDia  {
 	public static void main(String[] argc) {
 		IO io = new IOConsole();
 		
-		Labirinto labirinto = new LabirintoBuilder()
-				.addStanzaIniziale("LabCampusOne")
-				.addStanzaVincente("Biblioteca")
-				.addAdiacenza("LabCampusOne", "Biblioteca", "ovest")
-				.getLabirinto();
+		IO io = new IOConsole(scannerDiLinee);
+		
+		Labirinto labirinto = Labirinto.newBuilder().getDefaultLabirinto();
 		
 		DiaDia gioco = new DiaDia(labirinto, io);
 		gioco.gioca();

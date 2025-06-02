@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.*;
 
 import it.uniroma3.diadia.FormatoFileNonValidoException;
+import it.uniroma3.diadia.ambienti.Labirinto.LabirintoBuilder;
 import it.uniroma3.diadia.attrezzi.Attrezzo;
 
 public class CaricatoreLabirinto {
@@ -58,7 +59,7 @@ public class CaricatoreLabirinto {
 
 
 	public CaricatoreLabirinto(String nomeFile) throws FileNotFoundException {
-		this.labirintoBuilder = new LabirintoBuilder();
+		this.labirintoBuilder = Labirinto.newBuilder();
 		this.reader = new LineNumberReader(new FileReader(nomeFile));
 		this.righeLette = new HashMap<>();
 		this.carica();
@@ -67,7 +68,7 @@ public class CaricatoreLabirinto {
 	//la variabile booleana serve solo a differenziare i costruttori
 	//per poter mantenere anche il vecchio
 	public CaricatoreLabirinto(String stringaDaLeggere, boolean unused) {
-		this.labirintoBuilder = new LabirintoBuilder();
+		this.labirintoBuilder = Labirinto.newBuilder();
 		this.reader = new LineNumberReader(new StringReader(stringaDaLeggere));
 		this.righeLette = new HashMap<>();
 		this.carica();

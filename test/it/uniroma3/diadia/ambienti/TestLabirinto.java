@@ -11,7 +11,7 @@ class TestLabirinto {
 	
 	@BeforeEach
 	public void setUp() throws Exception {
-		labirinto = new Labirinto();
+		labirinto = Labirinto.newBuilder().getLabirinto();
 	}
 	
 	@Test
